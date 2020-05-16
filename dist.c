@@ -9,7 +9,8 @@
 
 
 
-double measure(){
+double measure()
+{
     /* measure distance */
     digitalWrite(GPIO_TRIGGER, 0);
     sleep(0.00001);
@@ -33,7 +34,7 @@ void main(void)
 {
     wiringPiSetup();
     wiringPiSetupGpio();
-    init_pins();
+    //init_pins();
 
     // output pin: Trigger
     pinMode(GPIO_TRIGGER, OUTPUT);
@@ -44,7 +45,8 @@ void main(void)
     digitalWrite(GPIO_TRIGGER, 0);
 
 
-    for(;;){
+    for(;;)
+    {
         double distance = measure();
         printf("Distance: %.1f cm.\n", distance);
     }
